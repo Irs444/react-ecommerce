@@ -20,6 +20,7 @@ import {
   MenuItem,
   MenuItems,
 } from '@headlessui/react'
+
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
 import { ChevronLeftIcon, ChevronRightIcon, StarIcon } from '@heroicons/react/20/solid'
@@ -1294,12 +1295,7 @@ function classNames(...classes) {
     
     
     
-    ]
-
-
-
-
-
+    ]   
 
 
 export default function ProductList() {
@@ -1308,10 +1304,7 @@ export default function ProductList() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
 
-
-
-
-  return (
+return (
     <div>
 
       {/*Product List Start */}
