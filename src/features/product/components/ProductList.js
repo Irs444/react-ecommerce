@@ -3,11 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
 
   fetchAllProductsAsync,
+  fetchProductByFilterAsync,
   selectAllProducts,
   
+
 } from '../productSlice';
 
-// import { useState } from 'react'
 import {
   Dialog,
   DialogBackdrop,
@@ -37,69 +38,76 @@ const sortOptions = [
 
 const filters = [
   {
-    id: 'color',
-    name: 'Color',
+    id: 'brand',
+    name: 'Brands',
     options: [
-      { value: 'white', label: 'White', checked: false },
-      { value: 'beige', label: 'Beige', checked: false },
-      { value: 'blue', label: 'Blue', checked: true },
-      { value: 'brown', label: 'Brown', checked: false },
-      { value: 'green', label: 'Green', checked: false },
-      { value: 'purple', label: 'Purple', checked: false },
+      { value: 'Essence', label: 'Essence', checked: false },
+      { value: 'Glamour Beauty', label: 'Glamour Beauty', checked: false },
+      { value: 'Velvet Touch', label: 'Velvet Touch', checked: false },
+      { value: 'Chic Cosmetics', label: 'Chic Cosmetics', checked: false },
+      { value: 'Nail Couture', label: 'Nail Couture', checked: false },
+      { value: 'Calvin Klein', label: 'Calvin Klein', checked: false },
+      { value: 'Chanel', label: 'Chanel', checked: false },
+      { value: 'Dior', label: 'Dior', checked: false },
+      {
+        value: 'Dolce & Gabbana',
+        label: 'Dolce & Gabbana',
+        checked: false
+      },
+      { value: 'Gucci', label: 'Gucci', checked: false },
+      {
+        value: 'Annibale Colombo',
+        label: 'Annibale Colombo',
+        checked: false
+      },
+      { value: 'Furniture Co.', label: 'Furniture Co.', checked: false },
+      { value: 'Knoll', label: 'Knoll', checked: false },
+      { value: 'Bath Trends', label: 'Bath Trends', checked: false }
     ],
   },
   {
     id: 'category',
     name: 'Category',
     options: [
-      { value: 'new-arrivals', label: 'New Arrivals', checked: false },
-      { value: 'sale', label: 'Sale', checked: false },
-      { value: 'travel', label: 'Travel', checked: true },
-      { value: 'organization', label: 'Organization', checked: false },
-      { value: 'accessories', label: 'Accessories', checked: false },
+      { value: 'beauty', label: 'beauty', checked: false },
+      { value: 'fragrances', label: 'fragrances', checked: false },
+      { value: 'furniture', label: 'furniture', checked: false },
+      { value: 'groceries', label: 'groceries', checked: false }
     ],
-  },
-  {
-    id: 'size',
-    name: 'Size',
-    options: [
-      { value: '2l', label: '2L', checked: false },
-      { value: '6l', label: '6L', checked: false },
-      { value: '12l', label: '12L', checked: false },
-      { value: '18l', label: '18L', checked: false },
-      { value: '20l', label: '20L', checked: false },
-      { value: '40l', label: '40L', checked: true },
-    ],
-  },
+  }
+
 ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-
-
-
-
-
 export default function ProductList() {
-  
+
   const dispatch = useDispatch();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
   const products = useSelector(selectAllProducts)
+  const [filter, setFilter] = useState({});
+
+  const handleFilter = (e, section, option) => {
+
+    const newFilter = { ...filter, [section.id]: option.value }
+    setFilter(newFilter)
+    dispatch(fetchProductByFilterAsync(newFilter))
+    console.log(section.id, option.value);
+
+  }
 
   useEffect(() => {
-
-   dispatch(fetchAllProductsAsync())
-   
-  },[dispatch])
+    dispatch(fetchAllProductsAsync())
+  }, [dispatch])
 
 
-return (
+  return (
 
-  
-  <div >
-     
+
+    <div >
+
 
       {/*Product List Start */}
 
@@ -257,6 +265,7 @@ return (
                                 id={`filter-${section.id}-${optionIdx}`}
                                 name={`${section.id}[]`}
                                 type="checkbox"
+                                onChange={e => handleFilter(e, section, option)}
                                 className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                               />
                               <label htmlFor={`filter-${section.id}-${optionIdx}`} className="ml-3 text-sm text-gray-600">
@@ -294,17 +303,17 @@ return (
                                       <span aria-hidden="true" className="absolute inset-0" />
                                       {product.title}
                                     </a>
-                                    
+
                                     <p className="mt-1 text-sm text-gray-500">
-                                    <StarIcon className='w-6 h-6 inline'></StarIcon>
-                                     <span className='align-bottom'>{product.rating}</span> </p>
+                                      <StarIcon className='w-6 h-6 inline'></StarIcon>
+                                      <span className='align-bottom'>{product.rating}</span> </p>
                                   </h3>
                                   <p className="mt-1 text-sm text-gray-500">{product.color}</p>
                                 </div>
                                 <div>
 
-                                <p className="text-sm font-medium text-gray-900">${Math.round(product.price*(1-product.discountPercentage/100))}</p>
-                                <p className="text-sm font-medium line-through text-gray-400">${product.price}</p>
+                                  <p className="text-sm font-medium text-gray-900">${Math.round(product.price * (1 - product.discountPercentage / 100))}</p>
+                                  <p className="text-sm font-medium line-through text-gray-400">${product.price}</p>
                                 </div>
                               </div>
                             </div>
@@ -387,6 +396,6 @@ return (
 
 
     </div>
- 
+
   );
 }
