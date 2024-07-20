@@ -25,7 +25,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-const Navbar = ({ children }) => {
+const Navbar = ({children}) => {
     return (
         <div>
             <div className="min-h-full ">

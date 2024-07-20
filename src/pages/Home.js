@@ -7,12 +7,16 @@ import ProductList from '../features/product/components/ProductList'
 const Home = () => {
   return (
     <div>
-        <Navbar>
-        
 
-           <ProductList></ProductList>
-      
-        </Navbar>
+      <Navbar>
+
+        <ProductList>
+
+        </ProductList>
+      </Navbar>
+
+
+
     </div>
   )
 }
