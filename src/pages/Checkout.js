@@ -50,9 +50,12 @@ const Checkout = () => {
     const [open, setOpen] = useState(true)
 
     return (
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <div className='bg-gray-300 p-10'>
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
             <div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5'>
-                <div className='lg:col-span-3 p-10 mt-5 border rounded-xl shadow-lg'>
+                <div className='lg:col-span-3 p-10 mt-5 border rounded-xl shadow-lg bg-white'>
 
                     <form>
                         <div className="space-y-12">
@@ -356,6 +359,7 @@ const Checkout = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

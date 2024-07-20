@@ -8,10 +8,13 @@ const Home = () => {
   return (
     <div>
         <Navbar>
+        
+
            <ProductList></ProductList>
+      
         </Navbar>
     </div>
   )
 }
 
-export default Home
+export default Home   
