@@ -3,8 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
 
   fetchAllProductsAsync,
+  fetchBrandsAsync,
+  fetchCategoriesAsync,
   fetchProductByFilterAsync,
   selectAllProducts,
+  selectBrands,
+  selectcategories,
   
 
 
@@ -37,47 +41,6 @@ const sortOptions = [
   { name: 'Price: High to Low', sort: 'price', order: "desc", current: false },
 ]
 
-const filters = [
-  {
-    id: 'brand',
-    name: 'Brands',
-    options: [
-      { value: 'Essence', label: 'Essence', checked: false },
-      { value: 'Glamour Beauty', label: 'Glamour Beauty', checked: false },
-      { value: 'Velvet Touch', label: 'Velvet Touch', checked: false },
-      { value: 'Chic Cosmetics', label: 'Chic Cosmetics', checked: false },
-      { value: 'Nail Couture', label: 'Nail Couture', checked: false },
-      { value: 'Calvin Klein', label: 'Calvin Klein', checked: false },
-      { value: 'Chanel', label: 'Chanel', checked: false },
-      { value: 'Dior', label: 'Dior', checked: false },
-      {
-        value: 'Dolce & Gabbana',
-        label: 'Dolce & Gabbana',
-        checked: false
-      },
-      { value: 'Gucci', label: 'Gucci', checked: false },
-      {
-        value: 'Annibale Colombo',
-        label: 'Annibale Colombo',
-        checked: false
-      },
-      { value: 'Furniture Co.', label: 'Furniture Co.', checked: false },
-      { value: 'Knoll', label: 'Knoll', checked: false },
-      { value: 'Bath Trends', label: 'Bath Trends', checked: false }
-    ],
-  },
-  {
-    id: 'category',
-    name: 'Category',
-    options: [
-      { value: 'beauty', label: 'beauty', checked: false },
-      { value: 'fragrances', label: 'fragrances', checked: false },
-      { value: 'furniture', label: 'furniture', checked: false },
-      { value: 'groceries', label: 'groceries', checked: false }
-    ],
-  }
-
-]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -88,6 +51,23 @@ export default function ProductList() {
   const dispatch = useDispatch();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
   const products = useSelector(selectAllProducts)
+  const brands = useSelector(selectBrands)
+  const categories = useSelector(selectcategories)
+
+  const filters = [
+    {
+      id: 'brand',
+      name: 'Brands',
+      options: brands,
+    },
+    {
+      id: 'category',
+      name: 'Category',
+      options:categories,
+    }
+  
+  ]
+  
   // const totalItems = useSelector(selectTotalItems)
   const [filter, setFilter] = useState({});
   const [sort, setSort] = useState({});
@@ -132,6 +112,11 @@ export default function ProductList() {
   }, [dispatch, filter, sort, page])
 
 
+  useEffect(() => {
+    dispatch(fetchBrandsAsync())
+    dispatch(fetchCategoriesAsync())
+  },[])
+
   return (
 
 
@@ -143,7 +128,7 @@ export default function ProductList() {
       <div >
         <div>
           {/* Mobile filter dialog */}
-          <MobileFilter handleFilter={handleFilter} mobileFiltersOpen={mobileFiltersOpen} setMobileFiltersOpen={setMobileFiltersOpen}></MobileFilter>
+          <MobileFilter handleFilter={handleFilter} mobileFiltersOpen={mobileFiltersOpen} setMobileFiltersOpen={setMobileFiltersOpen} filters={filters}></MobileFilter>
 
           <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8  ">
             <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
@@ -205,7 +190,7 @@ export default function ProductList() {
 
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                 {/* Filters */}
-                <DesktopFilter handleFilter={handleFilter}></DesktopFilter>
+                <DesktopFilter handleFilter={handleFilter} filters={filters}></DesktopFilter>
 
                 {/* Product grid */}
                 <ProductGrid products={products}></ProductGrid>
@@ -224,7 +209,7 @@ export default function ProductList() {
   );
 }
 
-function MobileFilter({ mobileFiltersOpen, setMobileFiltersOpen, handleFilter }) {
+function MobileFilter({ mobileFiltersOpen, setMobileFiltersOpen, handleFilter , filters}) {
 
   return <Dialog open={mobileFiltersOpen} onClose={setMobileFiltersOpen} className="relative z-40 lg:hidden">
     <DialogBackdrop
@@ -295,7 +280,7 @@ function MobileFilter({ mobileFiltersOpen, setMobileFiltersOpen, handleFilter })
   </Dialog>;
 }
 
-function DesktopFilter({ handleFilter }) {
+function DesktopFilter({ handleFilter , filters }) {
   return <form className="hidden lg:block">
 
 
