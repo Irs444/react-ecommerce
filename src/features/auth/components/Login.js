@@ -1,36 +1,30 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-
-  increment,
-  incrementAsync,
-  selectCount,
-} from '../authSlice';
 import { Link } from 'react-router-dom';
 
 
 export default function Login() {
-  const count = useSelector(selectCount);
-  const dispatch = useDispatch();
+  
+
 
 
   return (
     <div>
       <div >
-        <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+        <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 shadow-lg w-96 mx-auto bg-gray-300 mt-10 rounded">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <img
+            {/* <img
               alt="Your Company"
               src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
               className="mx-auto h-10 w-auto"
-            />
+            /> */}
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
               Log in to your account
             </h2>
           </div>
 
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form action="#" method="POST" className="space-y-6">
+            <form  className="space-y-6">
               <div>
                 <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                   Email address
@@ -40,8 +34,8 @@ export default function Login() {
                     id="email"
                     name="email"
                     type="email"
-                    required
-                    autoComplete="email"
+                    
+                    
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
@@ -63,8 +57,7 @@ export default function Login() {
                     id="password"
                     name="password"
                     type="password"
-                    required
-                    autoComplete="current-password"
+                   
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
