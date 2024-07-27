@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form"
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { selectLoggedInUser, createUserAsync } from '../authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function Signup() {
   const dispatch = useDispatch();
+  const user = useSelector(selectLoggedInUser)
+  
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm()
-
-  
 
   console.log(errors);
 
   return (
     <div >
-      
+      {user && <Navigate to={'/'} replace={true}></Navigate>}
       <div >
         <div className="flex h-full max-h-full bg-gray-300 mt-10  flex-1 flex-col justify-center px-6 py-12 lg:px-8 shadow-md  w-96 mx-auto rounded  ">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm ">
@@ -36,7 +35,7 @@ export default function Signup() {
 
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
             <form noValidate className="space-y-6" onSubmit={handleSubmit((data) => {
-              dispatch(createUserAsync({email:data.email ,  password:data.password}))
+              dispatch(createUserAsync({ email: data.email, password: data.password }))
               console.log(data);
             })}>
               <div>
@@ -98,8 +97,9 @@ export default function Signup() {
                 <div className="mt-2">
                   <input
                     id="cpassword"
-                    {...register("cpassword", { required: true ,
-                       validate: (value, formValues) => value === formValues.password || 'password not matching'
+                    {...register("cpassword", {
+                      required: true,
+                      validate: (value, formValues) => value === formValues.password || 'password not matching'
                     })}
                     type="password"
 
