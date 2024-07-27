@@ -1869,7 +1869,7 @@
       "checked": false
     }
   ],
-  "categories":[
+  "categories": [
     {
       "value": "beauty",
       "label": "beauty",
@@ -1890,6 +1890,17 @@
       "label": "groceries",
       "checked": false
     }
+  ],
+  "users": [
+    {
+      "id": "33c4",
+      "email": "irshad@gmail.com",
+      "password": "Irshad@123"
+    },
+    {
+      "id": "2046",
+      "email": "abc@gmail.com",
+      "password": "Hello@12345"
+    }
   ]
-  
 }

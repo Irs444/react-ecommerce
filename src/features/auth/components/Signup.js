@@ -1,12 +1,26 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useForm } from "react-hook-form"
 import { Link } from 'react-router-dom';
+import { selectLoggedInUser, createUserAsync } from '../authSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function Signup() {
+  const dispatch = useDispatch();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm()
+
+  
+
+  console.log(errors);
 
   return (
     <div >
+      
       <div >
         <div className="flex h-full max-h-full bg-gray-300 mt-10  flex-1 flex-col justify-center px-6 py-12 lg:px-8 shadow-md  w-96 mx-auto rounded  ">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm ">
@@ -16,12 +30,15 @@ export default function Signup() {
               className="mx-auto h-10 w-auto"
             /> */}
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Create a New Account
+              Create a New Account
             </h2>
           </div>
 
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form action="#" method="POST" className="space-y-6">
+            <form noValidate className="space-y-6" onSubmit={handleSubmit((data) => {
+              dispatch(createUserAsync({email:data.email ,  password:data.password}))
+              console.log(data);
+            })}>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                   Email address
@@ -29,12 +46,17 @@ export default function Signup() {
                 <div className="mt-2">
                   <input
                     id="email"
-                    name="email"
+                    {...register("email", {
+                      required: true, pattern: {
+                        value: /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])/gm, message: "email is not valid"
+                      }
+                    })}
                     type="email"
                     required
-                    
+
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
+                  {errors.email && <span className='text-red-500'>{errors.email.message}</span>}
                 </div>
               </div>
 
@@ -52,12 +74,21 @@ export default function Signup() {
                 <div className="mt-2">
                   <input
                     id="password"
-                    name="password"
+                    {...register("password", {
+                      required: true, pattern: {
+                        value: /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,}/gm,
+                        message: `password must contain 1 number (0-9)\n
+                                  password must contain 1 uppercase letters\n
+                                  password must contain 1 lowercase letters\n
+                                  password must contain 1 non-alpha numeric number\n
+                                  password is 8-16 characters with no space`}
+                    })}
                     type="password"
-                    required
-                    
+
+
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
+                  {errors.password && <span className='text-red-500'>{errors.password.message}</span>}
                 </div>
               </div>
               <div>
@@ -67,12 +98,15 @@ export default function Signup() {
                 <div className="mt-2">
                   <input
                     id="cpassword"
-                    name="cpassword"
+                    {...register("cpassword", { required: true ,
+                       validate: (value, formValues) => value === formValues.password || 'password not matching'
+                    })}
                     type="password"
-                    required
-                    
+
+
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
+                  {errors.cpassword && <span className='text-red-500'>{errors.cpassword.message}</span>}
                 </div>
               </div>
 
