@@ -48,7 +48,7 @@ const ProductDetail = () => {
 
 
     const handleCart = (e) => {
-        e.preventDefault();
+        e.preventDefault();  // for reloading
        dispatch(addToCartAsync({...product, quantity:1, user:user.id})) 
     }
 
