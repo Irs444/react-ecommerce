@@ -5,7 +5,7 @@ import { Link, Navigate } from 'react-router-dom'
 import { deleteItemFromCartAsync, selectitems, updateCartAsync } from '../features/cart/cartSlice';
 import { useForm } from 'react-hook-form';
 import { selectLoggedInUser, updateUserAsync } from '../features/auth/authSlice';
-import { createOrderAsync } from '../features/order/orderSlice';
+import { createOrderAsync, selecCurrentOrder } from '../features/order/orderSlice';
 
 const Checkout = () => {
 
@@ -25,6 +25,7 @@ const Checkout = () => {
     const dispatch = useDispatch();
     const [open, setOpen] = useState(true)
     const items = useSelector(selectitems)
+    const currentOrder = useSelector(selecCurrentOrder);
 
     const totalAmount = items.reduce((amount, item) => item.price * item.quantity + amount, 0)
     const totalItems = items.reduce((total, item) => item.quantity + total, 0)
@@ -49,8 +50,15 @@ const Checkout = () => {
     }
 
     const handleOrder = (e) => {
-        const order = { items, totalAmount, totalItems, user, paymentMethod, selectAddress }
-        dispatch(createOrderAsync(order))
+        if (selectAddress && paymentMethod) {
+
+            const order = { items, totalAmount, totalItems, user, paymentMethod, selectAddress, status: "pending"  }; // other status can be delivered, received
+            dispatch(createOrderAsync(order))
+            //need to redirect from here to a new page of order success 
+        } else {
+            // TODO: we can use proper messaging popup here
+            alert("Enter Address and Payment method")
+        }
         //TODO : Rediret order success page
         //TODO : clear cart after order
         //TODO : on server change stock number of item
@@ -60,6 +68,7 @@ const Checkout = () => {
 
         <div className='bg-gray-300 p-10'>
             {!items.length && <Navigate to={"/"} replace={true}></Navigate>}
+            {currentOrder && <Navigate to={`/order-success/${currentOrder.id}`} replace={true}></Navigate>}
 
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
                 <div className='grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5'>
