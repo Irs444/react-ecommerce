@@ -1913,148 +1913,44 @@
     {
       "id": "33c4",
       "email": "irshad@gmail.com",
-      "password": "Irshad@123"
+      "password": "Irshad@123",
+      "address": [
+        {
+          "name": "Irshad Ansari",
+          "email": "irs786had123@gmail.com",
+          "phone": "7497940723",
+          "street": "Sec - 10,House no. 510 Indira Nagar Lko",
+          "city": "Lucknow",
+          "state": "Uttar Pradesh",
+          "pinCode": "226016"
+        },
+        {
+          "name": "Suhail Ansari",
+          "email": "suhail@gmail.com",
+          "phone": "7497940723",
+          "street": "Sec - 10,House no. 510 Indira Nagar Lko",
+          "city": "Lucknow",
+          "state": "Uttar Pradesh",
+          "pinCode": "226016"
+        }
+      ]
     },
     {
       "id": "2046",
       "email": "abc@gmail.com",
-      "password": "Hello@12345"
+      "password": "Hello@12345",
+      "address": []
     },
     {
       "id": "9426",
       "email": "demo@gmail.com",
-      "password": "Demo@12345"
+      "password": "Demo@12345",
+      "address": []
     }
   ],
   "cart": [
     {
-      "id": "1",
-      "title": "Essence Mascara Lash Princess",
-      "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
-      "category": "beauty",
-      "price": 9.99,
-      "discountPercentage": 7.17,
-      "rating": 4.94,
-      "stock": 5,
-      "tags": [
-        "beauty",
-        "mascara"
-      ],
-      "brand": "Essence",
-      "sku": "RCH45Q1A",
-      "weight": 2,
-      "dimensions": {
-        "width": 23.17,
-        "height": 14.43,
-        "depth": 28.01
-      },
-      "warrantyInformation": "1 month warranty",
-      "shippingInformation": "Ships in 1 month",
-      "availabilityStatus": "Low Stock",
-      "reviews": [
-        {
-          "rating": 2,
-          "comment": "Very unhappy with my purchase!",
-          "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "John Doe",
-          "reviewerEmail": "john.doe@x.dummyjson.com"
-        },
-        {
-          "rating": 2,
-          "comment": "Not as described!",
-          "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "Nolan Gonzalez",
-          "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
-        },
-        {
-          "rating": 5,
-          "comment": "Very satisfied!",
-          "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "Scarlett Wright",
-          "reviewerEmail": "scarlett.wright@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "30 days return policy",
-      "minimumOrderQuantity": 24,
-      "meta": {
-        "createdAt": "2024-05-23T08:56:21.618Z",
-        "updatedAt": "2024-05-23T08:56:21.618Z",
-        "barcode": "9164035109868",
-        "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
-      },
-      "images": [
-        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
-      "quantity": 2,
-      "user": "33c4"
-    },
-    {
-      "id": "7",
-      "title": "Chanel Coco Noir Eau De",
-      "description": "Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.",
-      "category": "fragrances",
-      "price": 129.99,
-      "discountPercentage": 18.64,
-      "rating": 2.76,
-      "stock": 41,
-      "tags": [
-        "fragrances",
-        "perfumes"
-      ],
-      "brand": "Chanel",
-      "sku": "K71HBCGS",
-      "weight": 4,
-      "dimensions": {
-        "width": 21.27,
-        "height": 28,
-        "depth": 11.89
-      },
-      "warrantyInformation": "1 week warranty",
-      "shippingInformation": "Ships in 1 month",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 1,
-          "comment": "Disappointing product!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Lincoln Kelly",
-          "reviewerEmail": "lincoln.kelly@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Great product!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Lincoln Kelly",
-          "reviewerEmail": "lincoln.kelly@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Excellent quality!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Lucas Allen",
-          "reviewerEmail": "lucas.allen@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "60 days return policy",
-      "minimumOrderQuantity": 5,
-      "meta": {
-        "createdAt": "2024-05-23T08:56:21.619Z",
-        "updatedAt": "2024-05-23T08:56:21.619Z",
-        "barcode": "1435582999795",
-        "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
-      },
-      "images": [
-        "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/1.png",
-        "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/2.png",
-        "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/3.png"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/thumbnail.png",
-      "quantity": 2,
-      "user": "33c4"
-    },
-    {
-      "id": "9",
+      "id": "6d86",
       "title": "Dolce Shine Eau de",
       "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.",
       "category": "fragrances",
@@ -2115,7 +2011,115 @@
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/thumbnail.png",
       "quantity": 2,
-      "user": "9426"
+      "user": "33c4"
+    }
+  ],
+  "orders": [
+    {
+      "id": "97d9",
+      "items": [
+        {
+          "id": "6d86",
+          "title": "Dolce Shine Eau de",
+          "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.",
+          "category": "fragrances",
+          "price": 69.99,
+          "discountPercentage": 11.47,
+          "rating": 2.68,
+          "stock": 3,
+          "tags": [
+            "fragrances",
+            "perfumes"
+          ],
+          "brand": "Dolce & Gabbana",
+          "sku": "1NBFK980",
+          "weight": 5,
+          "dimensions": {
+            "width": 17,
+            "height": 24.57,
+            "depth": 13.3
+          },
+          "warrantyInformation": "5 year warranty",
+          "shippingInformation": "Ships in 1-2 business days",
+          "availabilityStatus": "Low Stock",
+          "reviews": [
+            {
+              "rating": 4,
+              "comment": "Very satisfied!",
+              "date": "2024-05-23T08:56:21.619Z",
+              "reviewerName": "Xavier Wright",
+              "reviewerEmail": "xavier.wright@x.dummyjson.com"
+            },
+            {
+              "rating": 1,
+              "comment": "Poor quality!",
+              "date": "2024-05-23T08:56:21.619Z",
+              "reviewerName": "Mila Hernandez",
+              "reviewerEmail": "mila.hernandez@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Very happy with my purchase!",
+              "date": "2024-05-23T08:56:21.619Z",
+              "reviewerName": "Sophia Brown",
+              "reviewerEmail": "sophia.brown@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "30 days return policy",
+          "minimumOrderQuantity": 9,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.619Z",
+            "updatedAt": "2024-05-23T08:56:21.619Z",
+            "barcode": "1939383392674",
+            "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/1.png",
+            "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/2.png",
+            "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/thumbnail.png",
+          "quantity": 2,
+          "user": "33c4"
+        }
+      ],
+      "totalAmount": 139.98,
+      "totalItems": 2,
+      "user": {
+        "id": "33c4",
+        "email": "irshad@gmail.com",
+        "password": "Irshad@123",
+        "address": [
+          {
+            "name": "Irshad Ansari",
+            "email": "irs786had123@gmail.com",
+            "phone": "7497940723",
+            "street": "Sec - 10,House no. 510 Indira Nagar Lko",
+            "city": "Lucknow",
+            "state": "Uttar Pradesh",
+            "pinCode": "226016"
+          },
+          {
+            "name": "Suhail Ansari",
+            "email": "suhail@gmail.com",
+            "phone": "7497940723",
+            "street": "Sec - 10,House no. 510 Indira Nagar Lko",
+            "city": "Lucknow",
+            "state": "Uttar Pradesh",
+            "pinCode": "226016"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectAddress": {
+        "name": "Irshad Ansari",
+        "email": "irs786had123@gmail.com",
+        "phone": "7497940723",
+        "street": "Sec - 10,House no. 510 Indira Nagar Lko",
+        "city": "Lucknow",
+        "state": "Uttar Pradesh",
+        "pinCode": "226016"
+      }
     }
   ]
 }

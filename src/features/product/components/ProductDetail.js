@@ -49,7 +49,9 @@ const ProductDetail = () => {
 
     const handleCart = (e) => {
         e.preventDefault();  // for reloading
-       dispatch(addToCartAsync({...product, quantity:1, user:user.id})) 
+        const newitem = {...product, quantity:1, user:user.id}
+        delete newitem['id']; 
+       dispatch(addToCartAsync(newitem)) 
     }
 
 
