@@ -4,8 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom'
 import { deleteItemFromCartAsync, selectitems, updateCartAsync } from '../features/cart/cartSlice';
 import { useForm } from 'react-hook-form';
-import { selectLoggedInUser, updateUserAsync } from '../features/auth/authSlice';
+import {  updateUserAsync } from '../features/auth/authSlice';
 import { createOrderAsync, selecCurrentOrder } from '../features/order/orderSlice';
+import { selectUserInfo } from '../features/user/userSlice';
 
 const Checkout = () => {
 
@@ -16,7 +17,7 @@ const Checkout = () => {
         formState: { errors },
     } = useForm()
 
-    const user = useSelector(selectLoggedInUser)
+    const user = useSelector(selectUserInfo)
 
     const [selectAddress, setSelectAddress] = useState(null)
     const [paymentMethod, setPaymentMethod] = useState("cash")
