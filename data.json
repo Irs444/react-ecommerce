@@ -1911,46 +1911,15 @@
   ],
   "users": [
     {
-      "id": "33c4",
-      "email": "irshad@gmail.com",
+      "id": "6dc9",
+      "email": "irshad@123gmail.com",
       "password": "Irshad@123",
       "address": [
         {
-          "name": "Irshad Ansari",
-          "email": "irshad@gmail.com",
+          "name": "Irshad",
+          "email": "irshad@123gmail.com",
           "phone": "7497940723",
           "street": "Sec - 10,House no. 510 Indira Nagar Lko",
-          "city": "Lucknow",
-          "state": "Uttar Pradesh",
-          "pinCode": "226016"
-        }
-      ]
-    },
-    {
-      "id": "2046",
-      "email": "abc@gmail.com",
-      "password": "Hello@12345",
-      "address": []
-    },
-    {
-      "id": "9426",
-      "email": "demo@gmail.com",
-      "password": "Demo@12345",
-      "address": [
-        {
-          "name": "Demo",
-          "email": "demo@gmail.com",
-          "phone": "7497940723",
-          "street": "Sec - 10,House no. 555 Indira Nagar Lko",
-          "city": "Lucknow",
-          "state": "Uttar Pradesh",
-          "pinCode": "226016"
-        },
-        {
-          "name": "Suhail",
-          "email": "demo@gmail.com",
-          "phone": "9161003014",
-          "street": "Sec - 10,House no. 555 Indira Nagar Lko",
           "city": "Lucknow",
           "state": "Uttar Pradesh",
           "pinCode": "226016"
@@ -1961,10 +1930,10 @@
   "cart": [],
   "orders": [
     {
-      "id": "5ff9",
+      "id": "0fa0",
       "items": [
         {
-          "id": "2f0b",
+          "id": "6b1e",
           "title": "Powder Canister",
           "description": "The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish.",
           "category": "beauty",
@@ -2023,19 +1992,19 @@
           ],
           "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/thumbnail.png",
           "quantity": 1,
-          "user": "33c4"
+          "user": "6dc9"
         }
       ],
       "totalAmount": 14.99,
       "totalItems": 1,
       "user": {
-        "id": "33c4",
-        "email": "irshad@gmail.com",
+        "id": "6dc9",
+        "email": "irshad@123gmail.com",
         "password": "Irshad@123",
         "address": [
           {
-            "name": "Irshad Ansari",
-            "email": "irshad@gmail.com",
+            "name": "Irshad",
+            "email": "irshad@123gmail.com",
             "phone": "7497940723",
             "street": "Sec - 10,House no. 510 Indira Nagar Lko",
             "city": "Lucknow",
@@ -2046,117 +2015,10 @@
       },
       "paymentMethod": "cash",
       "selectAddress": {
-        "name": "Irshad Ansari",
-        "email": "irshad@gmail.com",
+        "name": "Irshad",
+        "email": "irshad@123gmail.com",
         "phone": "7497940723",
         "street": "Sec - 10,House no. 510 Indira Nagar Lko",
-        "city": "Lucknow",
-        "state": "Uttar Pradesh",
-        "pinCode": "226016"
-      },
-      "status": "pending"
-    },
-    {
-      "id": "717e",
-      "items": [
-        {
-          "id": "7be7",
-          "title": "Chanel Coco Noir Eau De",
-          "description": "Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.",
-          "category": "fragrances",
-          "price": 129.99,
-          "discountPercentage": 18.64,
-          "rating": 2.76,
-          "stock": 41,
-          "tags": [
-            "fragrances",
-            "perfumes"
-          ],
-          "brand": "Chanel",
-          "sku": "K71HBCGS",
-          "weight": 4,
-          "dimensions": {
-            "width": 21.27,
-            "height": 28,
-            "depth": 11.89
-          },
-          "warrantyInformation": "1 week warranty",
-          "shippingInformation": "Ships in 1 month",
-          "availabilityStatus": "In Stock",
-          "reviews": [
-            {
-              "rating": 1,
-              "comment": "Disappointing product!",
-              "date": "2024-05-23T08:56:21.619Z",
-              "reviewerName": "Lincoln Kelly",
-              "reviewerEmail": "lincoln.kelly@x.dummyjson.com"
-            },
-            {
-              "rating": 4,
-              "comment": "Great product!",
-              "date": "2024-05-23T08:56:21.619Z",
-              "reviewerName": "Lincoln Kelly",
-              "reviewerEmail": "lincoln.kelly@x.dummyjson.com"
-            },
-            {
-              "rating": 4,
-              "comment": "Excellent quality!",
-              "date": "2024-05-23T08:56:21.619Z",
-              "reviewerName": "Lucas Allen",
-              "reviewerEmail": "lucas.allen@x.dummyjson.com"
-            }
-          ],
-          "returnPolicy": "60 days return policy",
-          "minimumOrderQuantity": 5,
-          "meta": {
-            "createdAt": "2024-05-23T08:56:21.619Z",
-            "updatedAt": "2024-05-23T08:56:21.619Z",
-            "barcode": "1435582999795",
-            "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
-          },
-          "images": [
-            "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/1.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/2.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/3.png"
-          ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/thumbnail.png",
-          "quantity": 1,
-          "user": "9426"
-        }
-      ],
-      "totalAmount": 129.99,
-      "totalItems": 1,
-      "user": {
-        "id": "9426",
-        "email": "demo@gmail.com",
-        "password": "Demo@12345",
-        "address": [
-          {
-            "name": "Demo",
-            "email": "demo@gmail.com",
-            "phone": "7497940723",
-            "street": "Sec - 10,House no. 555 Indira Nagar Lko",
-            "city": "Lucknow",
-            "state": "Uttar Pradesh",
-            "pinCode": "226016"
-          },
-          {
-            "name": "Suhail",
-            "email": "demo@gmail.com",
-            "phone": "9161003014",
-            "street": "Sec - 10,House no. 555 Indira Nagar Lko",
-            "city": "Lucknow",
-            "state": "Uttar Pradesh",
-            "pinCode": "226016"
-          }
-        ]
-      },
-      "paymentMethod": "cash",
-      "selectAddress": {
-        "name": "Suhail",
-        "email": "demo@gmail.com",
-        "phone": "9161003014",
-        "street": "Sec - 10,House no. 555 Indira Nagar Lko",
         "city": "Lucknow",
         "state": "Uttar Pradesh",
         "pinCode": "226016"

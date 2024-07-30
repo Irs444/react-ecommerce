@@ -5,7 +5,7 @@ import { fetchLoggedInUser, fetchLoggedInUserOrders, updateUser } from './userAP
 const initialState = {
   userOrders: [],
   status: 'idle',
-  userInfo: []  // this info will be used in case of detailed user info, while auth will only be used for loggedIn user id etc checks.
+  userInfo: null,  // this info will be used in case of detailed user info, while auth will only be used for loggedIn user id etc checks.
 };
 
 export const fetchLoggedInUserOrdersAsync = createAsyncThunk(
@@ -28,8 +28,8 @@ export const fetchLoggedInUserAsync = createAsyncThunk(
 
 export const updateUserAsync = createAsyncThunk(
   'user/updateUser',
-  async (update) => {
-    const response = await updateUser(update);
+  async (id) => { 
+    const response = await updateUser(id);
    
     return response.data;
   }
@@ -78,11 +78,11 @@ export const userSlice = createSlice({
   },
 });
 
-export const { increment } = userSlice.actions;
 
 export const selectUserOrders = (state) => state.user.userOrders;
 export const selectUserInfo = (state) => state.user.userInfo
 
+export const { increment } = userSlice.actions;
 
 
 

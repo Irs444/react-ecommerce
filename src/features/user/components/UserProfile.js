@@ -47,10 +47,10 @@ export default function UserProfile() {
                 <p className="text-sm leading-6 text-gray-900">{addres.city}</p>
               </div>
               <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                <button type="button" className="font-medium text-indigo-600 hover:text-indigo-500 p-1" onClick={e => handleEdit(e, index)}>
+                <button type="button" className="font-medium text-indigo-600 hover:text-indigo-500 p-1" onClick={(e) => handleEdit(e, index)}>
                 {/* <i class="fa-solid fa-pen-to-square fa-2x "></i> */}Edit
                 </button>
-                <button type="button" className="font-medium text-red-600 hover:text-red-500 p-1" onClick={e => handleRemove(e, index)}>
+                <button type="button" className="font-medium text-red-600 hover:text-red-500 p-1" onClick={(e) => handleRemove(e, index)}>
                 {/* <i class="fa-solid fa-trash fa-2x"></i> */}Remove
                 </button>
               </div>
