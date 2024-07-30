@@ -361,6 +361,7 @@ function Pagination({ page, setPage, handlePage, totalItems = 30 }) {
             (el, index) => (
 
               <div
+              
                 onClick={(e) => handlePage(index + 1)}
                 aria-current="page"
                 className={`relative z-10 inline-flex items-center cursor-pointer ${index + 1 === page ? 'bg-indigo-600 text-white' : 'text-gray-400'}  px-4 py-2 text-sm font-semibold  focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
